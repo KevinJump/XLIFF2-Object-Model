@@ -1,255 +1,177 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{381519C4-F501-4A4A-8A47-6AB3420F773D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Localization.Xliff.OM.Tests</RootNamespace>
-    <AssemblyName>Xliff.OM.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
-    <IsCodedUITest>False</IsCodedUITest>
-    <TestProjectType>UnitTest</TestProjectType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <AssemblyTitle>Xliff.OM.Tests</AssemblyTitle>
+    <Product>Xliff.OM.Tests</Product>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.0.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.XML" />
   </ItemGroup>
-  <Choose>
-    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-      </ItemGroup>
-    </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
+
   <ItemGroup>
-    <Compile Include="Modules\Metadata\MetadataDefaultValueTests.cs" />
-    <Compile Include="Modules\ResourceData\ResourceDataDefaultValueTests.cs" />
-    <Compile Include="Modules\SizeRestriction\SizeRestrictionDefaultValueTests.cs" />
-    <Compile Include="Modules\TranslationCandidates\TranslationCandidatesDefaultValueTests.cs" />
-    <Compile Include="Modules\Validation\ValidationDefaultValueTests.cs" />
-    <Compile Include="Modules\Glossary\GlossaryDefaultValueTests.cs" />
-    <Compile Include="Converters\UIntConverterTests.cs">
+    <Compile Update="Converters\UIntConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Modules\ChangeTracking\ChangeTrackingDefaultValueTests.cs" />
-    <Compile Include="FileBasedTests.cs" />
-    <Compile Include="Extensibility\CustomElement1.cs" />
-    <Compile Include="Extensibility\CustomElement2.cs" />
-    <Compile Include="Extensibility\CustomExtension.cs" />
-    <Compile Include="Extensibility\CustomHandler.cs" />
-    <Compile Include="Extensibility\ExtensibilityTests.cs" />
-    <Compile Include="Extensibility\XliffData.cs" />
-    <Compile Include="Extensibility\XliffDataList.cs" />
-    <Compile Include="Modules\ChangeTracking\RevisionsContainerTests.cs" />
-    <Compile Include="Modules\ChangeTracking\RevisionTests.cs" />
-    <Compile Include="Modules\ChangeTracking\ItemTests.cs" />
-    <Compile Include="Modules\ChangeTracking\ChangeTrackTests.cs" />
-    <Compile Include="Modules\Glossary\DefinitionTests.cs" />
-    <Compile Include="Modules\Glossary\GlossaryTests.cs" />
-    <Compile Include="Modules\Glossary\GlossaryEntryTests.cs" />
-    <Compile Include="Modules\Glossary\TermTests.cs" />
-    <Compile Include="Modules\Glossary\TranslationTests.cs" />
-    <Compile Include="Modules\Metadata\MetadataContainerTests.cs">
+    <Compile Update="Modules\Metadata\MetadataContainerTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Modules\Metadata\MetaTests.cs">
+    <Compile Update="Modules\Metadata\MetaTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Modules\Metadata\MetaGroupTests.cs">
+    <Compile Update="Modules\Metadata\MetaGroupTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Modules\ResourceData\ResourceItemTargetTests.cs" />
-    <Compile Include="Modules\ResourceData\ResourceItemSourceTests.cs" />
-    <Compile Include="Modules\ResourceData\ResourceItemRefTests.cs" />
-    <Compile Include="Modules\ResourceData\ResourceItemTests.cs" />
-    <Compile Include="Modules\ResourceData\ResourceDataTests.cs" />
-    <Compile Include="Modules\ResourceData\ReferenceTests.cs" />
-    <Compile Include="Modules\SizeRestriction\NormalizationTests.cs" />
-    <Compile Include="Modules\SizeRestriction\ProfileDataTests.cs" />
-    <Compile Include="Modules\SizeRestriction\ProfilesTests.cs" />
-    <Compile Include="Modules\TranslationCandidates\MatchTests.cs">
+    <Compile Update="Modules\TranslationCandidates\MatchTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\AttributeDataTests.cs">
+    <Compile Update="Core\AttributeDataTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\ProcessingInstructionTagTests.cs" />
-    <Compile Include="Core\CDataTagTests.cs" />
-    <Compile Include="Core\InlineTags\MarkedSpanStartTests.cs">
+    <Compile Update="Core\InlineTags\MarkedSpanStartTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\InlineTags\MarkedSpanEndTests.cs">
+    <Compile Update="Core\InlineTags\MarkedSpanEndTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\InlineTags\MarkedSpanTests.cs">
+    <Compile Update="Core\InlineTags\MarkedSpanTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\InlineTags\SpanningCodeTests.cs">
-      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Core\InlineTags\SpanningCodeEndTests.cs">
+    <Compile Update="Core\InlineTags\SpanningCodeTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\InlineTags\SpanningCodeStartTests.cs">
+    <Compile Update="Core\InlineTags\SpanningCodeEndTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\InlineTags\StandaloneCodeTests.cs">
+    <Compile Update="Core\InlineTags\SpanningCodeStartTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\DataTests.cs">
+    <Compile Update="Core\InlineTags\StandaloneCodeTests.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Core\DataTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\OriginalDataTests.cs">
+    <Compile Update="Core\OriginalDataTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\CommentTagTests.cs" />
-    <Compile Include="Core\XliffElementTests.cs">
+    <Compile Update="Core\XliffElementTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\UnitTests.cs">
+    <Compile Update="Core\UnitTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\NoteContainerTests.cs">
+    <Compile Update="Core\NoteContainerTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\TargetTests.cs">
+    <Compile Update="Core\TargetTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\SourceTests.cs">
+    <Compile Update="Core\SourceTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\SkeletonTests.cs">
+    <Compile Update="Core\SkeletonTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\SegmentTests.cs">
+    <Compile Update="Core\SegmentTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\PlainTextTests.cs">
+    <Compile Update="Core\PlainTextTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\NoteTests.cs">
+    <Compile Update="Core\NoteTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\IgnorableTests.cs">
+    <Compile Update="Core\IgnorableTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\GroupTests.cs">
+    <Compile Update="Core\GroupTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\FileTests.cs">
+    <Compile Update="Core\FileTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\InlineTags\CodePointTests.cs">
+    <Compile Update="Core\InlineTags\CodePointTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Core\XliffDocumentTests.cs">
+    <Compile Update="Core\XliffDocumentTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Modules\Validation\ValidationTests.cs" />
-    <Compile Include="Modules\Validation\RuleTests.cs" />
-    <Compile Include="ReflectorTests.cs">
+    <Compile Update="ReflectorTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Serialization\TestData.cs">
+    <Compile Update="Serialization\TestData.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Serialization\XliffReaderTests.cs">
+    <Compile Update="Serialization\XliffReaderTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Serialization\XliffWriterTests.cs">
+    <Compile Update="Serialization\XliffWriterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="TestUtilities.cs">
+    <Compile Update="TestUtilities.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="DefaultValueTests.cs">
+    <Compile Update="DefaultValueTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Validators\ValidationErrorTests.cs" />
-    <Compile Include="Validators\StandardValidatorTests.cs">
+    <Compile Update="Validators\StandardValidatorTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="XliffElementPropertiesTests.cs">
+    <Compile Update="XliffElementPropertiesTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Attributes\ConverterAttributeTests.cs">
+    <Compile Update="Attributes\ConverterAttributeTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Attributes\SchemaChildAttributeTests.cs">
+    <Compile Update="Attributes\SchemaChildAttributeTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Attributes\SchemaEntityAttributeTests.cs">
+    <Compile Update="Attributes\SchemaEntityAttributeTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Converters\TranslationSubjectConverterTests.cs">
+    <Compile Update="Converters\TranslationSubjectConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Converters\TranslationStateConverterTests.cs">
+    <Compile Update="Converters\TranslationStateConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Converters\PreservationConverterTests.cs">
+    <Compile Update="Converters\PreservationConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Converters\IntConverterTests.cs">
+    <Compile Update="Converters\IntConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Converters\HexConverterTests.cs">
+    <Compile Update="Converters\HexConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Converters\BoolConverterTests.cs">
+    <Compile Update="Converters\BoolConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Converters\ContentDirectionalityConverterTests.cs">
+    <Compile Update="Converters\ContentDirectionalityConverterTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs">
+    <Compile Update="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
-    <Compile Include="ParentAttachedListTests.cs">
+    <Compile Update="ParentAttachedListTests.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xliff.OM\Xliff.OM.csproj">
-      <Project>{f72462db-976c-4e91-a82f-960b5d89ae1c}</Project>
-      <Name>Xliff.OM</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\Xliff.OM\Xliff.OM.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Oasis_TestFiles\core\in-out\toJoin1_in.xlf">
@@ -1182,32 +1104,4 @@
     <Content Include="Oasis_TestFiles\readme.html" />
     <Content Include="Oasis_TestFiles\readme.txt" />
   </ItemGroup>
-  <ItemGroup />
-  <Choose>
-    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
